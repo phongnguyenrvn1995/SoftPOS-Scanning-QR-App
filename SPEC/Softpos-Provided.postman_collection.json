@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "272e425c-b41c-42d1-b9bc-5273885d3562",
+		"name": "Softpos-Provided",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29995689"
+	},
+	"item": [
+		{
+			"name": "createPayment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "a6b802356bd5f6d291cfa0a0798eebcfdf9b248f",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "8315f58629d577301010c5af8bc5da7e9fd951b3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Request-Id",
+						"value": "3",
+						"type": "text"
+					},
+					{
+						"key": "X-Request-Date",
+						"value": "2023-10-25T09:57:19.849660+07:00",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mid\": \"090000120000001\",\n    \"tid\": \"90000103\",\n    \"orderId\": \"81c9ce8e-27ec-4bfc-b1d6-80924dd9bfff\",\n    \"paymentType\": \"NAPAS247\",\n    \"currency\": \"VND\",\n    \"amount\": 10000\n}"
+				},
+				"url": {
+					"raw": "https://squidgate.digipay.dev/payment/v1/payment",
+					"protocol": "https",
+					"host": [
+						"squidgate",
+						"digipay",
+						"dev"
+					],
+					"path": [
+						"payment",
+						"v1",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "simulatePayment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "a6b802356bd5f6d291cfa0a0798eebcfdf9b248f",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "8315f58629d577301010c5af8bc5da7e9fd951b3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Request-Id",
+						"value": "3",
+						"type": "text"
+					},
+					{
+						"key": "X-Request-Date",
+						"value": "2023-10-25T09:57:19.849660+07:00",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"referenceId\": \"81c9ce8e-27ec-4bfc-b1d6-80924dd9bfff\",\n    \"amount\": 10000\n}"
+				},
+				"url": {
+					"raw": "https://squidgate.digipay.dev/payment/v1/payment",
+					"protocol": "https",
+					"host": [
+						"squidgate",
+						"digipay",
+						"dev"
+					],
+					"path": [
+						"payment",
+						"v1",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPayment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "a6b802356bd5f6d291cfa0a0798eebcfdf9b248f",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "8315f58629d577301010c5af8bc5da7e9fd951b3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Request-Id",
+						"value": "5",
+						"type": "text"
+					},
+					{
+						"key": "X-Request-Date",
+						"value": "2023-10-25T09:57:19.849660+07:00",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mid\": \"090000120000001\",\n    \"tid\": \"90000103\"\n}"
+				},
+				"url": {
+					"raw": "https://squidgate.digipay.dev/payment/v1/payment/20231109072524000587",
+					"protocol": "https",
+					"host": [
+						"squidgate",
+						"digipay",
+						"dev"
+					],
+					"path": [
+						"payment",
+						"v1",
+						"payment",
+						"20231109072524000587"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getPayment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "5",
+								"type": "text"
+							},
+							{
+								"key": "X-Request-Date",
+								"value": "2023-10-25T09:57:19.849660+07:00",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mid\": \"090000170000001\",\n    \"tid\": \"90000109\"\n}"
+						},
+						"url": {
+							"raw": "https://squidgate.digipay.dev/payment/v1/payment/20231108025702517632",
+							"protocol": "https",
+							"host": [
+								"squidgate",
+								"digipay",
+								"dev"
+							],
+							"path": [
+								"payment",
+								"v1",
+								"payment",
+								"20231108025702517632"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 08 Nov 2023 03:22:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "566"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "0a03f2b0-9c7c-40e8-84a8-9cdfa3ceb9d7"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "ODzEvFVLSQ0Fc3Q="
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-654afeea-3967c31c0b937da36fa9324e;Sampled=0;lineage=b2a24854:0|81868303:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reqId\": \"5\",\n    \"reqDate\": \"2023-10-25T09:57:19.849660+07:00\",\n    \"resCode\": \"0000\",\n    \"resDesc\": \"\",\n    \"status\": \"APPROVED\",\n    \"createdAt\": \"2023-11-08T02:57:02.000Z\",\n    \"approvedAt\": \"2023-11-08T10:20:34.000Z\",\n    \"transactions\": [\n        {\n            \"referenceId\": \"20231108032036864030\",\n            \"amount\": 20000,\n            \"fee\": 0,\n            \"vat\": 0,\n            \"net\": 20000,\n            \"status\": \"APPROVED\",\n            \"createdAt\": \"2023-11-08T03:20:36.000Z\",\n            \"approvedAt\": \"2023-11-08T10:20:34.000Z\"\n        },\n        {\n            \"referenceId\": \"20231108025814035217\",\n            \"amount\": 20000,\n            \"fee\": 0,\n            \"vat\": 0,\n            \"net\": 20000,\n            \"status\": \"APPROVED\",\n            \"createdAt\": \"2023-11-08T02:58:14.000Z\",\n            \"approvedAt\": \"2023-11-08T02:58:11.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Notify Napas247 (O2K)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "a408e1d2c7e7ee41fd89c6d63b185ff4377a61e0",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "32ca20f6b090d2f9e36999c50bd70e4e7111b268",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rqUID\": \"7df73a0b-590c-4b49-858d-995fe0252abb\",\n    \"Channel\": \"MB\",\n    \"TransferType\": \"O2K\",\n    \"TransactionDate\": \"2023-10-26T06:52:27.818Z\",\n    \"TransactionReference\": \"20231109072524000587\",\n    \"FromAcctNo\": \"668888-970406\",\n    \"ReceivingAcctNo\": \"210810307000061\",\n    \"TransactionAmount\": \"60000\",\n    \"CCYCD\": \"VND\",\n    \"Memo\": \"KVNQR20231109072524000587\",\n    \"TransferStatus\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://squidgate.digipay.dev/acquirer/v1/webhook/payment-hub/napas247",
+					"protocol": "https",
+					"host": [
+						"squidgate",
+						"digipay",
+						"dev"
+					],
+					"path": [
+						"acquirer",
+						"v1",
+						"webhook",
+						"payment-hub",
+						"napas247"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

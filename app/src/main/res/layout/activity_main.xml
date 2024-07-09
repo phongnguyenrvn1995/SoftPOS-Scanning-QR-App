@@ -76,7 +76,7 @@
         android:layout_marginStart="20dp"
         android:ems="10"
         android:inputType="text"
-        android:text="/acquirer/v1/webhook/payment-hub/napas247"
+        android:text="/simulator/v1/payment"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"

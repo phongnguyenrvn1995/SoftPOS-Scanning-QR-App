@@ -50,7 +50,9 @@ open class ConfirmActivity : AppCompatActivity() {
         "Basic MzJjYTIwZjZiMDkwZDJmOWUzNjk5OWM1MGJkNzBlNGU3MTExYjI2ODphNDA4ZTFkMmM3ZTdlZTQxZmQ4OWM2ZDYzYjE4NWZmNDM3N2E2MWUw"
     private var xRequestID = ""
     private var xRequestDate = ""
-    private var apiPath = "/acquirer/v1/webhook/payment-hub/napas247"
+//    private var apiPath = "/acquirer/v1/webhook/payment-hub/napas247"
+//    private var baseURL = "https://squidgate.digipay.dev"
+    private var apiPath = "/simulator/v1/payment"
     private var baseURL = "https://squidgate.digipay.dev"
     private var memo = ""
     private var refID = ""
@@ -81,6 +83,48 @@ open class ConfirmActivity : AppCompatActivity() {
 
     @SuppressLint("SimpleDateFormat")
     private fun requestAPI() {
+//        {
+//            "rqUID": "7df73a0b-590c-4b49-858d-995fe0252abb",
+//            "Channel": "MB",
+//            "TransferType": "O2K",
+//            "TransactionDate": "2023-10-26T06:52:27.818Z",
+//            "TransactionReference": "20231027081336038694",
+//            "FromAcctNo": "668888-970406",
+//            "ReceivingAcctNo": "210810307000061",
+//            "TransactionAmount": "60000",
+//            "CCYCD": "VND",
+//            "Memo": "KVNQR20231027081336038694",
+//            "TransferStatus": 0
+//        }
+//        val date = Date()
+
+        val json = JSONObject()
+        json.put("rqUID", UUID.randomUUID())
+        json.put("TransactionDate", getUTCDateISO8601()/*SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(date)*/)
+        json.put("referenceId", refID)
+        json.put("amount", amount.toInt())
+
+        xRequestID = json.getString("rqUID")
+        xRequestDate = json.getString("TransactionDate")
+
+
+        buildRetrofit()!!
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .concatMap { buildAPI(it) }
+            .concatMap { request(it, json.toString()) }
+            .doOnNext {
+                binding?.txtInfo?.text = it.toString()
+            }
+            .doOnError {
+                binding?.txtInfo?.text = it.toString()
+            }
+            .onErrorReturn { "" }
+            .subscribe()
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    private fun requestAPI_() {
 //        {
 //            "rqUID": "7df73a0b-590c-4b49-858d-995fe0252abb",
 //            "Channel": "MB",

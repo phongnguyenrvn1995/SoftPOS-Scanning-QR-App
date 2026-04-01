@@ -58,6 +58,7 @@ open class ConfirmActivity : AppCompatActivity() {
     private var refID = ""
     private var amount = ""
     private var toAccount = ""
+    private var accountID = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityConfirmBinding.inflate(layoutInflater)
@@ -67,6 +68,7 @@ open class ConfirmActivity : AppCompatActivity() {
         authorization = intent.getStringExtra("authorization")!!
         apiPath = intent.getStringExtra("apiPath")!!
         baseURL = intent.getStringExtra("baseURL")!!
+        accountID = intent.getStringExtra("accountID")!!
 
         binding?.btnBack?.setOnClickListener { finish() }
 
@@ -103,6 +105,8 @@ open class ConfirmActivity : AppCompatActivity() {
         json.put("TransactionDate", getUTCDateISO8601()/*SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(date)*/)
         json.put("referenceId", refID)
         json.put("amount", amount.toInt())
+        json.put("reference1", memo)
+        json.put("toAccountId", accountID)
 
         xRequestID = json.getString("rqUID")
         xRequestDate = json.getString("TransactionDate")

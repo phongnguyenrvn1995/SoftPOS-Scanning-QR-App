@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("authorization", binding!!.txtApiAuthorization.text.toString())
         intent.putExtra("baseURL", binding!!.txtApiUrl.text.toString())
         intent.putExtra("apiPath", binding!!.txtApiPath.text.toString())
+        intent.putExtra("accountID", binding!!.txtAccountId.text.toString())
         startActivity(intent)
     }
 }
